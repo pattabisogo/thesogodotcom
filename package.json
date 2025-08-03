@@ -1,0 +1,46 @@
+{
+  "name": "thesogodotcom",
+  "version": "1.0.0",
+  "description": "The Sogodo website",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "npm run build:production",
+    "build:azure": "npm run build:production",
+    "build:production": "echo 'Building production assets...' && npm run copy:assets && npm run minify:css && npm run minify:js",
+    "build:static": "echo 'Building static site...' && npm run copy:assets",
+    "copy:assets": "mkdir -p dist && cp -r src/* dist/ 2>/dev/null || xcopy src dist\\ /E /I /Y 2>nul || echo 'Assets copied'",
+    "minify:css": "echo 'CSS minification placeholder - add your CSS build tool here'",
+    "minify:js": "echo 'JS minification placeholder - add your JS build tool here'",
+    "dev": "npm run start",
+    "serve": "python -m http.server 8000 || python3 -m http.server 8000 || npx http-server",
+    "test": "echo 'No tests specified yet'",
+    "lint": "echo 'Linting placeholder'",
+    "clean": "rm -rf dist node_modules/.cache"
+  },
+  "keywords": [
+    "website",
+    "sogodo",
+    "web",
+    "static-site"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pattabisogo/thesogodotcom.git"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "dependencies": {},
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
